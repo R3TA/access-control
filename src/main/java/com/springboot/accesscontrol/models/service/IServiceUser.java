@@ -1,7 +1,6 @@
 package com.springboot.accesscontrol.models.service;
 
 import java.util.List;
-
 import com.springboot.accesscontrol.models.entity.User;
 
 public interface IServiceUser {

@@ -12,30 +12,34 @@ import com.springboot.accesscontrol.models.entity.AccessHistory;
 @Service
 public class ServiceAccessHistoryImpl implements IServiceAccessHistory{
 
-	@Autowired
 	AccessHistoryDao accessHistoryDao;
+	
+	@Autowired
+	public ServiceAccessHistoryImpl(AccessHistoryDao accessHistoryDao) {
+		this.accessHistoryDao = accessHistoryDao;
+	}
 	
 	@Override
 	@Transactional(readOnly = true)
 	public List<AccessHistory> findAll() {
-		return accessHistoryDao.findAll();
+		return this.accessHistoryDao.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
 	public List<AccessHistory> findAllByIdUser(Long id) {
-		return accessHistoryDao.findAllByIdUser(id);
+		return this.accessHistoryDao.findAllByIdUser(id);
 	}
 
 	@Override
 	@Transactional
 	public AccessHistory create(AccessHistory access) {
-		return accessHistoryDao.save(access);
+		return this.accessHistoryDao.save(access);
 	}
 
 	@Override
 	@Transactional
 	public void delete(Long id) {
-		accessHistoryDao.deleteById(id);
+		this.accessHistoryDao.deleteById(id);
 	}
 }

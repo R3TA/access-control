@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title th:text = "${titulo}"></title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<title th:text = "${titulo}"></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-<h1 th:text = "${titulo}"></h1>
-<div class="table-responsive">
-	<table class="table table-bordered text-center">
-		<thead>
-			<tr class="bg-secondary text-white">
-				<th>Id</th>
-				<th>User Id</th>
-				<th>Registro (Fecha/Hora)</th>
-				<th>Movimiento</th>
-			</tr>
-		<thead>
-		<tbody>
-			<tr th:each="assistance: ${assistances}">
-				<td th:text = "${assistance.id}"></td>
-				<td th:text = "${assistance.user.id}"></td>
-				<td th:text = "${#temporals.format(assistance.accessAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
-				<!--  td th:text = "${assistance.accessAt}"></td> -->
-				<td th:text = "${assistance.movimiento}"></td>
-			</tr>
-		</tbody>
-	</table>
-</div>		
+<div class="container-fluid bg-white">
+	<div class="row bg-light">
+		<h1 th:text = "${titulo}"></h1>
+	</div>
+	<div class="container bg-white">
+		<form>
+			<div class="input-group">
+				<input type="text" class="form-control" id="cardnumber" placeholder="Card number"></input>
+				<div class="input-group-btn">
+					<input type="button" class="btn btn-success" id="add" value="Agregar"></input>
+				</div>
+			</div>				
+		</form>
+		<div class="row bg-white">
+			<div class="table-responsive bg-white">
+				<table class="table table-bordered text-center">
+					<thead>
+						<tr class="bg-secondary text-white">
+							<th>Id</th>
+							<th>User Id</th>
+							<th>Registro (Fecha/Hora)</th>
+							<th>Movimiento</th>
+						</tr>
+					<thead>
+					<tbody id="grid-data">
+					<!--
+						<tr th:each="assistance: ${assistances}">
+							<td th:text = "${assistance.id}"></td>
+							<td th:text = "${assistance.user.id}"></td>
+							<td th:text = "${#temporals.format(assistance.accessAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
+							<td th:text = "${assistance.movimiento}"></td>
+						</tr>
+						-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+			<div class="container-fluid bg-info">
+			fgfgf
+			</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="../js/assistance.js"></script>	
 </body>
 </html>

@@ -9,11 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "users")
 public class User implements Serializable{
-
+	
 	/**
 	 * 
 	 */
@@ -24,7 +25,8 @@ public class User implements Serializable{
 	private Long id;
 	
 	@Column(nullable = false, unique = true)
-	@NotEmpty(message = "The field 'identifier' can't be empty")
+	@NotEmpty(message = "The field 'cardNumber' can't be empty")
+	@NotNull(message = "The field 'cardNumber' can't be null")
 	private String cardNumber;
 	
 	public User() {}

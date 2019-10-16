@@ -1,8 +1,8 @@
 node {
-	//checkout scm
-	git url: 'https://github.com/R3TA/access-control.git'
-    def mvnHome = tool 'M3'
-    bat "${mvnHome}"+"\\bin\\mvn -B verify"
+	checkout scm
+	//git url: 'https://github.com/R3TA/access-control.git'
+    //def mvnHome = tool 'M3'
+    //bat "${mvnHome}\\bin\\mvn -B verify"
 }
 
 pipeline {

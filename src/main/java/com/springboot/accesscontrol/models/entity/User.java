@@ -25,8 +25,8 @@ public class User implements Serializable{
 	private Long id;
 	
 	@Column(nullable = false, unique = true)
-	@NotEmpty(message = "The field 'cardNumber' can't be empty")
-	@NotNull(message = "The field 'cardNumber' can't be null")
+	@NotEmpty(message = "can't be empty")
+	@NotNull(message = "can't be null")
 	private String cardNumber;
 	
 	public User() {}

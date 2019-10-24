@@ -43,7 +43,9 @@ pipeline {
         stage('QA'){
         	steps {
         		mail to: 'reta.info2009@gmail.com', subject: 'New build is waiting for your decision', body: 'Please make your decision about new build in Jenkins!'
-    			timeout(time: 60, unit: 'SECONDS') { }
+    			timeout(time: 60, unit: 'SECONDS') { 
+			input 'Do you approve?'
+			}
         	}
 		}
 

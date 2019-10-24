@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	    $.ajax({
-	        url: "http://localhost:9000/api/users"
+	        url: "/api/users"
 	    }).then(function(data, status, jqxhr) {
 	    	//alert(data.length);
 	    	var tabla = "";

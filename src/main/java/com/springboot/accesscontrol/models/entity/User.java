@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -27,6 +29,8 @@ public class User implements Serializable{
 	@Column(nullable = false, unique = true)
 	@NotEmpty(message = "can't be empty")
 	@NotNull(message = "can't be null")
+	@Size(min = 8, max = 8, message = "can't have other amount characters")
+	@Pattern(regexp="[0-9]{8}")
 	private String cardNumber;
 	
 	public User() {}

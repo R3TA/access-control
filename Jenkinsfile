@@ -19,9 +19,9 @@ pipeline {
                 script{
                     try {
                         bat 'mvn sonar:sonar -Dsonar.projectKey=Access-Control -Dsonar.host.url=http://localhost:9007 -Dsonar.login=4cbb3e0f7152b0e4582e380fadd73c2ee91f36da'
-                    } catch (Exception exc) {
+                    } catch (e) {
                         echo 'Something failed, You must run the sonar service!'
-                        //throw
+                        throw e
                     }
                 }
             }

@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
 	    $.ajax({
-	        url: "http://localhost:9000/api/assistances"
+	        url: "/api/assistances"
 	    }).then(function(data, status, jqxhr) {
     		var user = JSON.stringify(data);
     		var parser = JSON.parse(user);
